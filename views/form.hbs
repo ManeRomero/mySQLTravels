@@ -1,0 +1,24 @@
+<h3 class="jumbotron mt-4 text-center">Sube tu viaje</h3>
+
+<div class="container card shadow">
+    <form action="" method="POST" class="row mt-4">
+        <div class="form-group col-md-6">
+            {{#if travelById}}
+            <input hidden value="{{id}}" type="number">
+            {{/if}}
+            <input value="{{travelById.destiny}}" name="destiny" class="m-2 form-control form-control-md" type="text" placeholder="Destino" required>
+            <input value="{{travelById.price}}" name="price" class="m-2 form-control form-control-md" type="number" placeholder="Precio" required>
+            <input value="{{travelById.discount}}" name="discount" class="m-2 form-control form-control-md" type="number" placeholder="Descuento">
+        </div>
+
+        <div class="form-group col-md-6">
+            <input value="{{travelById.dateInit}}" name="dateInit" class="m-2 form-control form-control-md" type="date" placeholder="Fecha Salida" required>
+            <input value="{{travelById.dateTurn}}" name="dateTurn" class="m-2 form-control form-control-md" type="date" placeholder="Fecha Retorno" required>
+            <input value="{{travelById.picpath}}" name="picpath" class="m-2 form-control form-control-md" type="text" placeholder="Ruta Imagen" required>
+
+        <div class="form-group text-right">
+            <input type="submit" value="Añade tu Viaje" class="btn btn-outline-success">
+        </div>
+        </div>
+    </form>
+</div>

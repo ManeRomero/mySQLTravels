@@ -1,0 +1,11 @@
+<div class="col-md-8 mx-auto">
+    <h1>{{destiny}}</h1>
+    <img src="{{picpath}}" alt="{{destiny}} · {{price}}€." class="img-fluid">
+    <h3 class="text-right">{{puntito price}}</h3>
+    {{#if discount}}
+    <p class="text-right">{{discount}} % disponible</p>
+    {{else}}
+    <p class="text-right">Descuento no disponible</p>
+    {{/if}}
+    <small>{{dateInit}} - {{dateTurn}}</small>
+</div>

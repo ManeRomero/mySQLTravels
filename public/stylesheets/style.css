@@ -1,8 +1,66 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "Rubik", sans-serif;
 }
 
-a {
-  color: #00B7FF;
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255, 127, 80, 0.877);
+  color: white;
+}
+nav h3 {
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  margin: auto;
+  width: 100%;
+}
+section div.card {
+  width: 33%;
+  margin: auto;
+}
+section div.card div.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section div.card div.card-body p {
+  background-color: gold;
+  color: black;
+  padding: 1vw;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100vw;
+  position: absolute;
+  bottom: -20vh;
+}
+footer h6 {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

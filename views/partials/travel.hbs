@@ -1,0 +1,23 @@
+<div class="card">
+    <a href="/travels/{{id}}">
+        <div class="card-header">
+            <img src="{{picpath}}" alt="Travel to {{destiny}} for only {{price}} €!" class="img-fluid">
+            <h4 class="mt-4 text-center">{{destiny}}</h4>
+        </div>
+        <div class="card-body">
+            <h3>{{puntito price}}</h3>
+
+            {{#if discount}}
+            <p>{{discount}}% descuento</p>
+            {{else}}
+            <p>Descuento No disponible</p>
+            {{/if}}
+        </div>
+
+        <div class="card-footer">
+            <small>{{dateInit}}</small>
+            <small>{{dateTurn}}</small>
+            <a href="/travels/edit/{{id}}" class="btn btn-outline-success">Edit</a>
+        </div>
+    </a>
+</div>

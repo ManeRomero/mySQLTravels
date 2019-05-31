@@ -1,5 +1,5 @@
 const MYSQL = require('mysql2')
-
+const Sequelize = require('sequelize')
 const connect = MYSQL.createConnection({
     host: 'localhost',
     user: 'MRC',

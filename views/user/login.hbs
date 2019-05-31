@@ -1,0 +1,24 @@
+<div class="container-fluid" id="login">
+    <div class="col-md-6 mx-auto card">
+        <form action="/user/login" method="POST">
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">mySQLTravels</h1>
+                <p class="mt-4">Accede ya y accede a los mejores chollos!</p>
+            </div>
+
+            <div class="form-label-group mt-4">
+                <input type="email" id="inputMail" class="form-control" name="email" placeholder="Dirección e-mail"
+                    value="{{email}}" autofocus required>
+            </div>
+
+            <div class="form-label-group mt-4">
+                <input type="password" id="inputPassord" class="form-control" name="password" placeholder="Contraseña"
+                    value="{{password}}" required>
+            </div>
+
+            <div class="card-footer mt-4 text-right">
+                <button class="btn btn-lg btn-primary mt-4 " type="submit">Regístrate</button>
+            </div>
+        </form>
+    </div>
+</div>

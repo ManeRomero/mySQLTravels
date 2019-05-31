@@ -5,9 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const exphbars = require('express-handlebars')
 const override = require('method-override')
+const session = require('express-session')
+const flash = require('connect-flash')
 
 var indexRouter = require('./routes/index');
 var travelsRouter = require('./routes/travels');
+const userRouter = require('./routes/user')
 
 var app = express();
 
@@ -19,7 +22,7 @@ app.engine('.hbs', exphbars({
   extname: '.hbs',
   helpers: {
       puntito: function (price) {
-        return (Intl.NumberFormat("es-ES").format(price) + ' €')
+        return (Intl.NumberFormat("de-DE", {style: "currency", currency: "EUR"}).format(price))
       }
   }
 }))
@@ -32,8 +35,26 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(override('_method'))
 
+app.use(session({
+  name: 'userSession',
+  secret: 'myS3cr3tK3y',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {maxAge: 60*1000}
+}))
+
+app.use(flash())
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+    res.locals.error = req.flash('error')
+    res.locals.user = req.user || null
+    next()
+})
+
 app.use('/', indexRouter);
 app.use('/travels', travelsRouter);
+app.use('/user', userRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
